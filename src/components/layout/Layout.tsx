@@ -1,6 +1,6 @@
 import { Navbar } from './Navbar';
+import { StarryBackground } from '../ui/StarryBackground';
 import { NoiseOverlay } from '../ui/NoiseOverlay';
-import { ParallaxBackground } from '../ui/ParallaxBackground';
 import { SmoothScroll } from '../ui/SmoothScroll';
 // import { Footer } from './Footer'; // To be implemented
 
@@ -10,10 +10,10 @@ interface LayoutProps {
 
 export function Layout({ children }: LayoutProps) {
     return (
-        <div className="min-h-screen bg-black text-white selection:bg-cyber-500 selection:text-black font-inter overflow-x-hidden relative">
+        <div className="min-h-screen text-white selection:bg-cyber-500 selection:text-black font-inter overflow-x-hidden relative">
             <SmoothScroll />
+            <StarryBackground />
             <NoiseOverlay />
-            <ParallaxBackground />
             <Navbar />
             <main className="relative z-10">{children}</main>
             {/* <Footer /> */}

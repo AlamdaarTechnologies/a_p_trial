@@ -93,7 +93,7 @@ function ProjectCard({ project, index }: { project: any, index: number }) {
 
 export function Projects() {
     return (
-        <section id="projects" className="py-20 bg-black text-white relative overflow-hidden">
+        <section id="projects" className="py-20 text-white relative overflow-hidden">
             {/* <CyberBackground variant="orange" /> */}
             <div className="container mx-auto px-6 relative z-10">
                 <motion.div
