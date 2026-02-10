@@ -12,7 +12,7 @@ export function GlassCard({ children, className, hoverEffect = true, ...props }:
         <motion.div
             className={cn(
                 "bg-white/5 backdrop-blur-md border border-white/10 rounded-xl overflow-hidden relative group",
-                hoverEffect && "hover:bg-white/10 hover:border-cyber-500/30 hover:shadow-[0_0_20px_rgba(0,255,157,0.1)] transition-all duration-300",
+                hoverEffect && "hover:bg-white/5 hover:border-cyber-500/30 hover:shadow-[0_0_20px_rgba(0,255,157,0.1)] transition-all duration-300",
                 className
             )}
             {...props}

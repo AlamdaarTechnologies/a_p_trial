@@ -85,10 +85,21 @@ export function Hero() {
                     </p>
 
                     <div className="flex flex-wrap gap-4">
-                        <Button size="lg" className="border-cyber-500 text-black bg-cyber-500 hover:bg-cyber-600">
+                        <Button
+                            // @ts-ignore
+                            href="#projects"
+                            size="lg"
+                            className="border-cyber-500 text-black bg-cyber-500 hover:bg-cyber-600"
+                        >
                             View Work
                         </Button>
-                        <Button size="lg" variant="outline" className="border-electric-500 text-electric-500 hover:bg-electric-500/10">
+                        <Button
+                            // @ts-ignore
+                            href="#contact"
+                            size="lg"
+                            variant="outline"
+                            className="border-electric-500 text-electric-500 hover:bg-electric-500/10"
+                        >
                             Contact Me
                         </Button>
                     </div>
