@@ -36,10 +36,10 @@ export function Navbar() {
                 )}
             >
                 <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
-                    <div className="flex items-center gap-2 font-orbitron font-bold text-xl tracking-wider text-white">
+                    <a href="#hero" className="flex items-center gap-2 font-orbitron font-bold text-xl tracking-wider text-white hover:text-cyber-500 transition-colors cursor-pointer">
                         <Shield className="w-6 h-6 text-cyber-500" />
                         <span>ALAKMAR<span className="text-cyber-500">.</span>DEV</span>
-                    </div>
+                    </a>
 
                     {/* Desktop Nav */}
                     <div className="hidden md:flex items-center gap-8">
