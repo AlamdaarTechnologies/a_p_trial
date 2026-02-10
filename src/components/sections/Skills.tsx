@@ -14,11 +14,12 @@ const skills = [
 
 export function Skills() {
     return (
-        <section id="skills" className="py-20 relative">
+        <section id="skills" className="py-20 bg-black relative">
             {/* <CyberBackground variant="green" /> */}
             <TechBackground />
 
-            {/* Background elements removed to show StarryBackground */}
+            {/* Background Noise/Grid - kept for texture, but TechBackground adds motion */}
+            <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:50px_50px] [mask-image:radial-gradient(ellipse_80%_80%_at_50%_50%,#000_70%,transparent_100%)] pointer-events-none" />
 
             <div className="container mx-auto px-6 relative z-10">
                 <motion.div

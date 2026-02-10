@@ -9,10 +9,10 @@ import { GlassCard } from '../ui/GlassCard';
 
 export function Contact() {
     return (
-        <section id="contact" className="py-20 relative">
+        <section id="contact" className="py-20 bg-black relative">
             {/* <CyberBackground variant="blue" /> */}
             <TechBackground />
-            {/* Background elements removed to show StarryBackground */}
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_100%,rgba(176,38,255,0.1),transparent_50%)] pointer-events-none" />
 
             <div className="container mx-auto px-6 relative z-10">
                 <motion.div

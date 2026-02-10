@@ -46,7 +46,7 @@ const sentiment = [
 
 export function Timeline() {
     return (
-        <section id="timeline" className="py-20 relative overflow-hidden">
+        <section id="timeline" className="py-20 bg-black relative overflow-hidden">
             {/* <CyberBackground variant="purple" /> */}
             <div className="container mx-auto px-6 relative z-10">
                 <motion.div

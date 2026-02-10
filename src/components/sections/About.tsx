@@ -6,7 +6,7 @@ import { GlitchText } from '../ui/GlitchText';
 
 export function About() {
     return (
-        <section id="about" className="py-20 relative overflow-hidden">
+        <section id="about" className="py-20 bg-black relative overflow-hidden">
             {/* <CyberBackground variant="cyan" /> */}
             <div className="container mx-auto px-6">
                 <motion.div
