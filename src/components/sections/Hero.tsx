@@ -45,7 +45,7 @@ export function Hero() {
     }, [text, isDeleting, loopNum, typingSpeed, phrases]);
 
     return (
-        <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
+        <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
             {/* <CyberBackground variant="default" /> */}
 
             {/* Background Elements */}

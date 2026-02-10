@@ -20,6 +20,17 @@ export function SmoothScroll() {
 
         requestAnimationFrame(raf);
 
+        // Handle anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const href = anchor.getAttribute('href');
+                if (href && href !== '#') {
+                    lenis.scrollTo(href);
+                }
+            });
+        });
+
         return () => {
             lenis.destroy();
         };
