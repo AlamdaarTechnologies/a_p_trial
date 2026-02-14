@@ -5,9 +5,9 @@ import { GlassCard } from '../ui/GlassCard';
 
 const skills = [
     { category: "Cloud & DevOps", items: ["AWS", "Azure", "Docker", "Kubernetes", "CI/CD", "Terraform"] },
-    { category: "Cybersecurity", items: ["Network Security", "Ethical Hacking", "OWASP Top 10", "Wireshark", "Burp Suite", "Cryptography"] },
-    { category: "Development", items: ["React", "TypeScript", "Node.js", "Python", "Go", "TailwindCSS"] },
-    { category: "Databases & Tools", items: ["PostgreSQL", "MongoDB", "Redis", "Git", "Linux", "Bash"] },
+    { category: "Cybersecurity", items: ["Network Security", "Ethical Hacking", "Metasploit", "Wireshark", "Burp Suite", "Cryptography"] },
+    { category: "Development", items: ["HTML", "CSS", "JavaScript", "React", "TypeScript", "Node.js", "Python", "TailwindCSS"] },
+    { category: "Databases & Tools", items: ["MySQL", "XAMPP", "Vercel", "Git", "Kali Linux", "Bash"] },
 ];
 
 // import { CyberBackground } from '../ui/CyberBackground';

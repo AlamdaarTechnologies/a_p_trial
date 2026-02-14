@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { User, Cpu, Globe } from 'lucide-react';
+import { User, Code, Server, Cloud, Shield } from 'lucide-react';
 import { GlitchText } from '../ui/GlitchText';
 import { GlassCard } from '../ui/GlassCard';
 
@@ -37,24 +37,28 @@ export function About() {
 
                             <div className="flex-1 text-center md:text-left">
                                 <p className="text-gray-400 mb-6 leading-relaxed">
-                                    I am a passionate <span className="text-electric-500 font-semibold">Computer Science Engineering</span> student specializing in <span className="text-neon-500 font-semibold">Cybersecurity</span> and <span className="text-cyber-500 font-semibold">Cloud Computing</span>.
-                                    My journey is driven by a curiosity to understand how systems work at their core and how to secure them against evolving threats.
+                                    I build real-world web applications and continuously push myself toward mastering <span className="text-cyber-500 font-semibold">Cyber Security</span> and <span className="text-electric-500 font-semibold">Cloud Computing</span>.
+                                    From developing live business websites to exploring system security and deployment practices, I focus on building practical, secure, and scalable solutions.
+                                    <br /><br />
+                                    My goal is to combine <span className="text-neon-500 font-semibold">development</span>, <span className="text-electric-500 font-semibold">cloud</span>, and <span className="text-cyber-500 font-semibold">security</span> to create systems that are not just functional — but <span className="text-white font-bold">resilient</span>.
                                 </p>
 
-                                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                    <div className="flex items-center gap-3 bg-white/5 p-4 rounded-lg border border-white/5 hover:border-cyber-500/50 transition-colors">
-                                        <Cpu className="text-cyber-500" />
-                                        <div>
-                                            <h4 className="font-bold text-sm text-white">Cloud Architecture</h4>
-                                            <p className="text-xs text-gray-500">AWS, Azure, Docker</p>
-                                        </div>
+                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                    <div className="flex items-center gap-3 bg-white/5 p-3 rounded-lg border border-white/5 hover:border-cyber-500/50 transition-colors">
+                                        <Code className="text-cyber-500 w-5 h-5" />
+                                        <span className="font-bold text-sm text-white">Frontend Development</span>
                                     </div>
-                                    <div className="flex items-center gap-3 bg-white/5 p-4 rounded-lg border border-white/5 hover:border-neon-500/50 transition-colors">
-                                        <Globe className="text-neon-500" />
-                                        <div>
-                                            <h4 className="font-bold text-sm text-white">Network Security</h4>
-                                            <p className="text-xs text-gray-500">Pentesting, Cryptography</p>
-                                        </div>
+                                    <div className="flex items-center gap-3 bg-white/5 p-3 rounded-lg border border-white/5 hover:border-neon-500/50 transition-colors">
+                                        <Server className="text-neon-500 w-5 h-5" />
+                                        <span className="font-bold text-sm text-white">Backend Development</span>
+                                    </div>
+                                    <div className="flex items-center gap-3 bg-white/5 p-3 rounded-lg border border-white/5 hover:border-electric-500/50 transition-colors">
+                                        <Cloud className="text-electric-500 w-5 h-5" />
+                                        <span className="font-bold text-sm text-white">Cloud Fundamentals</span>
+                                    </div>
+                                    <div className="flex items-center gap-3 bg-white/5 p-3 rounded-lg border border-white/5 hover:border-red-500/50 transition-colors">
+                                        <Shield className="text-red-500 w-5 h-5" />
+                                        <span className="font-bold text-sm text-white">Cyber Security Basics</span>
                                     </div>
                                 </div>
                             </div>

@@ -1,13 +1,42 @@
 import { motion } from 'framer-motion';
-import { Mail, Github, Linkedin, Twitter, Send } from 'lucide-react';
+import { Mail, Github, Linkedin, Send } from 'lucide-react';
 import { Button } from '../ui/Button';
 import { GlitchText } from '../ui/GlitchText';
 import { TechBackground } from '../ui/TechBackground';
 import { GlassCard } from '../ui/GlassCard';
+import { useState } from 'react';
 
 // import { CyberBackground } from '../ui/CyberBackground';
 
 export function Contact() {
+    const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
+
+    async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+        e.preventDefault();
+        const form = e.currentTarget;
+        const data = new FormData(form);
+
+        try {
+            setStatus('submitting');
+            const response = await fetch("https://formspree.io/f/mpqjdzjq", {
+                method: "POST",
+                body: data,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
+
+            if (response.ok) {
+                setStatus('success');
+                form.reset();
+            } else {
+                setStatus('error');
+            }
+        } catch (error) {
+            setStatus('error');
+        }
+    }
+
     return (
         <section id="contact" className="py-20 bg-black relative">
             {/* <CyberBackground variant="blue" /> */}
@@ -41,19 +70,26 @@ export function Contact() {
                             Contact Information
                         </h3>
                         <div className="space-y-6">
-                            <div className="flex items-center gap-4 text-gray-300">
-                                <div className="p-3 bg-white/5 rounded-lg text-cyber-500">
+                            <a href="mailto:alakmarsaherwala@gmail.com" className="flex items-center gap-4 text-gray-300 hover:text-white transition-colors group">
+                                <div className="p-3 bg-white/5 rounded-lg text-cyber-500 group-hover:bg-cyber-500/20 transition-colors">
                                     <Mail size={24} />
                                 </div>
-                                <span>contact@alakmar.dev</span>
-                            </div>
-                            <div className="flex gap-4 mt-8">
-                                {[Github, Linkedin, Twitter].map((Icon, i) => (
-                                    <a key={i} href="#" className="p-3 bg-white/5 rounded-lg text-gray-400 hover:text-white hover:bg-white/10 transition-colors">
-                                        <Icon size={20} />
-                                    </a>
-                                ))}
-                            </div>
+                                <span className="font-mono">alakmarsaherwala@gmail.com</span>
+                            </a>
+
+                            <a href="https://www.linkedin.com/in/alakmar-saherwala-a71077309/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 text-gray-300 hover:text-white transition-colors group">
+                                <div className="p-3 bg-white/5 rounded-lg text-electric-500 group-hover:bg-electric-500/20 transition-colors">
+                                    <Linkedin size={24} />
+                                </div>
+                                <span>Alakmar Saherwala</span>
+                            </a>
+
+                            <a href="https://github.com/captain0769" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 text-gray-300 hover:text-white transition-colors group">
+                                <div className="p-3 bg-white/5 rounded-lg text-neon-500 group-hover:bg-neon-500/20 transition-colors">
+                                    <Github size={24} />
+                                </div>
+                                <span>Alakmar Saherwala</span>
+                            </a>
                         </div>
                     </motion.div>
 
@@ -63,29 +99,88 @@ export function Contact() {
                         viewport={{ once: true }}
                         className="p-8"
                     >
-                        <form className="space-y-4">
-                            <div>
-                                <label className="block text-sm font-medium text-gray-400 mb-1">Name</label>
-                                <input type="text" className="w-full bg-black/50 border border-white/10 rounded-lg px-4 py-2 text-white focus:border-cyber-500 focus:outline-none transition-colors" placeholder="John Doe" />
-                            </div>
-                            <div>
-                                <label className="block text-sm font-medium text-gray-400 mb-1">Email</label>
-                                <input type="email" className="w-full bg-black/50 border border-white/10 rounded-lg px-4 py-2 text-white focus:border-cyber-500 focus:outline-none transition-colors" placeholder="john@example.com" />
-                            </div>
-                            <div>
-                                <label className="block text-sm font-medium text-gray-400 mb-1">Message</label>
-                                <textarea rows={4} className="w-full bg-black/50 border border-white/10 rounded-lg px-4 py-2 text-white focus:border-cyber-500 focus:outline-none transition-colors" placeholder="Your message..." />
-                            </div>
-                            <Button className="w-full bg-cyber-500 text-black hover:bg-cyber-600">
-                                <Send className="w-4 h-4 mr-2" /> Send Message
-                            </Button>
-                        </form>
+                        {status === 'success' ? (
+                            <motion.div
+                                initial={{ opacity: 0, scale: 0.9 }}
+                                animate={{ opacity: 1, scale: 1 }}
+                                className="text-center py-12"
+                            >
+                                <div className="w-16 h-16 bg-cyber-500/10 rounded-full flex items-center justify-center mx-auto mb-4 border border-cyber-500/30">
+                                    <Send className="text-cyber-500 w-8 h-8" />
+                                </div>
+                                <h3 className="text-xl font-bold text-white mb-2">Message Sent!</h3>
+                                <p className="text-gray-400">Thanks for reaching out. I'll get back to you shortly.</p>
+                                <button
+                                    onClick={() => setStatus('idle')}
+                                    className="mt-6 text-sm text-cyber-500 hover:text-cyber-400 underline"
+                                >
+                                    Send another message
+                                </button>
+                            </motion.div>
+                        ) : (
+                            <form
+                                onSubmit={handleSubmit}
+                                className="space-y-4"
+                            >
+                                <div>
+                                    <label className="block text-sm font-medium text-gray-400 mb-1">Name</label>
+                                    <input
+                                        type="text"
+                                        name="name"
+                                        required
+                                        className="w-full bg-black/50 border border-white/10 rounded-lg px-4 py-2 text-white focus:border-cyber-500 focus:outline-none transition-colors"
+                                        placeholder="Your Name"
+                                    />
+                                </div>
+                                <div>
+                                    <label className="block text-sm font-medium text-gray-400 mb-1">Email</label>
+                                    <input
+                                        type="email"
+                                        name="email"
+                                        required
+                                        className="w-full bg-black/50 border border-white/10 rounded-lg px-4 py-2 text-white focus:border-cyber-500 focus:outline-none transition-colors"
+                                        placeholder="Your Email"
+                                    />
+                                </div>
+                                <div>
+                                    <label className="block text-sm font-medium text-gray-400 mb-1">Message</label>
+                                    <textarea
+                                        name="message"
+                                        required
+                                        rows={4}
+                                        className="w-full bg-black/50 border border-white/10 rounded-lg px-4 py-2 text-white focus:border-cyber-500 focus:outline-none transition-colors"
+                                        placeholder="Your message..."
+                                    />
+                                </div>
+                                <Button
+                                    type="submit"
+                                    disabled={status === 'submitting'}
+                                    className="w-full bg-cyber-500 text-black hover:bg-cyber-600 disabled:opacity-50 disabled:cursor-not-allowed"
+                                >
+                                    {status === 'submitting' ? (
+                                        <span className="flex items-center">
+                                            <span className="w-4 h-4 border-2 border-black/30 border-t-black rounded-full animate-spin mr-2" />
+                                            Sending...
+                                        </span>
+                                    ) : (
+                                        <>
+                                            <Send className="w-4 h-4 mr-2" /> Send Message
+                                        </>
+                                    )}
+                                </Button>
+                                {status === 'error' && (
+                                    <p className="text-red-500 text-sm text-center mt-2">
+                                        Something went wrong. Please try again.
+                                    </p>
+                                )}
+                            </form>
+                        )}
                     </GlassCard>
 
                 </div>
 
                 <div className="mt-20 text-center text-gray-500 text-sm">
-                    <p>© 2026 Alakmar Saherwala. Built with React & Tailwind.</p>
+                    <p>© 2026 Alakmar Saherwala | All rights reserved.</p>
                 </div>
             </div>
         </section>
