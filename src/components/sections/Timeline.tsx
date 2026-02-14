@@ -7,38 +7,29 @@ const sentiment = [
     {
         id: 1,
         type: "work",
-        role: "Cloud Security Intern",
-        organization: "TechSafe Solutions",
-        date: "June 2025 - Present",
-        description: "Assisting in the implementation of Zero Trust architecture and automating security compliance checks using Python and AWS Lambda.",
-        skills: ["AWS", "Python", "Security Compliance"]
+        role: "Founder",
+        organization: "Alamdaar Technologies",
+        date: "Nov 2025 - Present",
+        description: "Two aspirants founded a digital solutions startup delivering modern web solutions for businesses. Strengthened skills in development, client communication, strategic thinking, and project execution.",
+        skills: ["Leadership", "Strategic Thinking", "Project Management"]
     },
     {
         id: 2,
-        type: "education",
-        degree: "B.Tech in Computer Science (Cyber Security)",
-        organization: "Global Institute of Technology",
-        date: "2023 - 2027",
-        description: "Specializing in Network Security, Cryptography, and Cloud Computing. Vice President of the Cyber Security Club.",
-        skills: ["Network Security", "Cryptography", "Ethical Hacking"]
+        type: "work",
+        role: "Web Designing Internship",
+        organization: "Sparks to Ideas",
+        date: "May 2025 - June 2025",
+        description: "Designed and developed responsive websites using HTML, CSS, JavaScript, and modern frameworks. Collaborated with UI/UX teams to transform wireframes into functional web pages.",
+        skills: ["Figma", "VS Code", "Git"]
     },
     {
         id: 3,
-        type: "work",
-        role: "Freelance Web Developer",
-        organization: "Self-Employed",
-        date: "Jan 2024 - May 2025",
-        description: "Developed high-performance websites for local businesses using React and TailwindCSS. Implemented secure authentication flows.",
-        skills: ["React", "Node.js", "Web Security"]
-    },
-    {
-        id: 4,
         type: "education",
-        degree: "Higher Secondary Education",
-        organization: "City High School",
-        date: "2021 - 2023",
-        description: "Graduated with distinction in Science stream. Led the school's robotics team to nationals.",
-        skills: ["Physics", "Mathematics", "Computer Science"]
+        degree: "B.Tech Computer Science Engineering",
+        organization: "ITM Vocational University",
+        date: "2023 - 2027",
+        description: "Specializing in Cloud Technology and Information Security. Focusing on building a strong foundation in network defense and secure infrastructure.",
+        skills: ["Network Security", "Cryptography", "Ethical Hacking"]
     }
 ];
 

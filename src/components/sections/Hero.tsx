@@ -13,11 +13,11 @@ export function Hero() {
     const [typingSpeed, setTypingSpeed] = useState(150);
 
     const phrases = [
-        "Building Secure Cloud Architectures",
-        "Implementing Zero Trust Security",
-        "Automating DevSecOps Pipelines",
-        "Advanced Penetration Testing",
-        "Securing the Digital Frontier"
+        "Computer Science Student",
+        "Aspiring Cloud Engineer",
+        "Cybersecurity Enthusiast",
+        "Building Secure Web Apps",
+        "Open to Learning & Opportunities"
     ];
 
     useEffect(() => {
